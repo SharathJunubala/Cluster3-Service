@@ -8,7 +8,7 @@ RUN  apt-get update \
 RUN cd /tmp
 RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page271/autowash.zip
 RUN unzip autowash.zip && rm -f autowash.zip
-RUN cd autowash
+RUN cd car-wash-website-template
 COPY * /usr/local/apache2/htdocs/
 #CMD ["sh", "systemctl start httpd"]
 #ENTRYPOINT ["tail"]
