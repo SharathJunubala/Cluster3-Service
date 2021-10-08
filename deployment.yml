@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-deploy
+  namespace: service
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: service-deploy
+  template:
+    metadata:
+      labels:
+        app: service-deploy
+    spec:
+      containers:
+      - name: service-deploy
+        resources:
+        image: 104785239205.dkr.ecr.ap-south-1.amazonaws.com/cluster3-service:abcd
+        ports:
+        - containerPort: 8081

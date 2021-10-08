@@ -1,6 +1,6 @@
 FROM httpd
 #RUN systemctl start httpd
-ENTRYPOINT [ "sh", "systemctl start httpd"]
+#ENTRYPOINT [ "sh", "systemctl start httpd"]
 RUN  apt-get update \
   && apt-get install -y wget \
   && apt-get install unzip -y \
@@ -10,6 +10,6 @@ RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page2
 RUN unzip autowash.zip && rm -f autowash.zip
 RUN cd car-wash-website-template
 COPY * /usr/local/apache2/htdocs/
-#CMD ["sh", "systemctl start httpd"]
+#CMD ["sh", "systemctl enable httpd"]
 #ENTRYPOINT ["tail"]
 #CMD ["-f","/dev/null"]
